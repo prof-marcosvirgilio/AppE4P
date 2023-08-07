@@ -22,4 +22,10 @@
         android:name="br.dev.marcosvirgilio.mobile.esquadrao4patas.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_cad_animal"
+        android:name="br.dev.marcosvirgilio.mobile.esquadrao4patas.ui.animal.CadAnimalFragment"
+        android:label="@string/title_cad_animal"
+        tools:layout="@layout/fragment_cad_animal" />
 </navigation>
