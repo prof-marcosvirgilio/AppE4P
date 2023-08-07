@@ -29,7 +29,8 @@
             <Spinner
                 android:id="@+id/spTutor"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:entries="@array/tutores" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -53,7 +54,8 @@
             <Spinner
                 android:id="@+id/spPorte"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:entries="@array/porte_animal"/>
 
             <TextView
                 android:id="@+id/textView4"
@@ -64,13 +66,17 @@
             <Spinner
                 android:id="@+id/spCorPredominante"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:entries="@array/cor_predominante"/>
 
             <Button
                 android:id="@+id/btSalvar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_salvar" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
 
         </LinearLayout>
     </ScrollView>
