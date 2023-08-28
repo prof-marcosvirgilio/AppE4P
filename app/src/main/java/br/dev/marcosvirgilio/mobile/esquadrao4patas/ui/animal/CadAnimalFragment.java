@@ -1,5 +1,6 @@
 package br.dev.marcosvirgilio.mobile.esquadrao4patas.ui.animal;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -31,6 +33,10 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener 
     private Button salvar;
 
 
+    public CadAnimalFragment(){
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,6 +49,7 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener 
         this.porteAnimal = (Spinner) view.findViewById(R.id.spPorte);
         this.corAnimal = (Spinner) view.findViewById(R.id.spCorPredominante);
         this.salvar = (Button) view.findViewById(R.id.btSalvar);
+        this.salvar.setOnClickListener(this);
 
         //
         return this.view;
@@ -58,7 +65,14 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener 
                 Animal animal = new Animal();
                 animal.setNome(this.nomeAnimal.getText().toString());
                 animal.setCodTutor(this.codTutor.getSelectedItemPosition());
-
+                animal.setCodPorte(this.porteAnimal.getSelectedItemPosition());
+                animal.setCodCorPredominante(this.corAnimal.getSelectedItemPosition());
+                //mensagem de sucesso
+                Context context = view.getContext();
+                CharSequence text = "salvo com sucesso!";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText (context, text, duration);
+                toast.show();
                 break;
         }
 
