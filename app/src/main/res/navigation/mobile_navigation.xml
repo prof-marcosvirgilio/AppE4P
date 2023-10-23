@@ -28,4 +28,12 @@
         android:name="br.dev.marcosvirgilio.mobile.esquadrao4patas.ui.animal.CadAnimalFragment"
         android:label="@string/title_cad_animal"
         tools:layout="@layout/fragment_cad_animal" />
+
+    <fragment
+        android:id="@+id/navigation_con_animal"
+        android:name="br.dev.marcosvirgilio.mobile.esquadrao4patas.ui.animal.ConAnimalFragment"
+        android:label="@string/title_con_animal"
+        tools:layout="@layout/fragment_con_animal_list" />
+
+
 </navigation>
