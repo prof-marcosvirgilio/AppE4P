@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS animal (
   INDEX fk_animal_cor_idx (idcor),
   INDEX fk_animal_porte1_idx (idporte));
 
---cores
+
   INSERT INTO cor (idcor,decor)
   VALUES(0, 'Caramelo');
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS animal (
   INSERT INTO cor (idcor,decor)
   VALUES(3, 'Marrom');
 
-  --porte
+
 
   INSERT INTO porte(idporte,deporte)
   VALUES(0,'PP');
