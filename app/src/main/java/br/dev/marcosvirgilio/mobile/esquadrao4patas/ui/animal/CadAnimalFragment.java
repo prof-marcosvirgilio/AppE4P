@@ -3,9 +3,6 @@ package br.dev.marcosvirgilio.mobile.esquadrao4patas.ui.animal;
 import android.content.Context;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -28,9 +25,6 @@ import com.google.android.material.snackbar.Snackbar;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import br.dev.marcosvirgilio.mobile.esquadrao4patas.R;
 import br.dev.marcosvirgilio.mobile.esquadrao4patas.model.Animal;
 
@@ -39,7 +33,7 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener
     private View view = null;
     private CheckBox temTutor;
     private EditText nomeAnimal;
-    private Spinner codTutor;
+    private EditText nomeTutor;
     private Spinner porteAnimal;
     private Spinner corAnimal;
     private Button salvar;
@@ -60,7 +54,7 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener
         this.view = inflater.inflate(R.layout.fragment_cad_animal, container, false);
         //Binding
         this.temTutor = (CheckBox) view.findViewById(R.id.cbTemTutor);
-        this.codTutor = (Spinner) view.findViewById(R.id.spTutor);
+        this.nomeTutor = (EditText) view.findViewById(R.id.etTutor);
         this.nomeAnimal = (EditText) view.findViewById(R.id.etNomeAnimal);
         this.porteAnimal = (Spinner) view.findViewById(R.id.spPorte);
         this.corAnimal = (Spinner) view.findViewById(R.id.spCorPredominante);
@@ -84,13 +78,13 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener
             //instanciando objeto de negócio
                 Animal animal = new Animal();
                 animal.setNome(this.nomeAnimal.getText().toString());
-                animal.setCodTutor(this.codTutor.getSelectedItemPosition());
+                animal.setTutor(this.nomeTutor.getText().toString());
                 animal.setCodPorte(this.porteAnimal.getSelectedItemPosition());
                 animal.setCodCorPredominante(this.corAnimal.getSelectedItemPosition());
                 //Chamar WebService
                 jsonObjectReq = new JsonObjectRequest(
                         Request.Method.POST,
-                        "http://10.0.2.2/ws/cadanimal.php",
+                        "https://marcosvir.phost0001.servidorwebfacil.com/e4p/cadanimal.php",
                         animal.toJsonObject(), this, this);
                 requestQueue.add(jsonObjectReq);
                 break;
@@ -124,7 +118,7 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener
                 //campos texto
                 this.nomeAnimal.setText("");
                 //selecionando primiro item dos spinners
-                this.codTutor.setSelection(0);
+                this.nomeTutor.setSelection(0);
                 this.porteAnimal.setSelection(0);
                 this.corAnimal.setSelection(0);
             }

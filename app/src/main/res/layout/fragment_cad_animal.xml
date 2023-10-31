@@ -24,13 +24,14 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Selecione o Tutor" />
+                android:text="Nome do Tutor" />
 
-            <Spinner
-                android:id="@+id/spTutor"
+            <EditText
+                android:id="@+id/etTutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/tutores" />
+                android:ems="10"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView2"

@@ -89,12 +89,12 @@ public class ConAnimalFragment extends Fragment
         //objeto com informações de filtro da consulta
 
         Animal animal = new Animal();
-        animal.setNome("Toto");
+        animal.setCodCorPredominante(1);
         //incluindo objeto no array de envio
         jsonArray.put(animal.toJsonObject());
         //requisição para o Rest Server
         jsonArrayReq = new JsonArrayRequest(Request.Method.GET,
-                "http://10.0.2.2/ws/conanimal.php",
+                "https://marcosvir.phost0001.servidorwebfacil.com/e4p/conanimal.php",
                 jsonArray, this, this);
         //mando executar a requisção na fila do sistema
         requestQueue.add(jsonArrayReq);
@@ -116,8 +116,7 @@ public class ConAnimalFragment extends Fragment
     public void onResponse(Object response) {
         try {
             //array Json para receber a resposta do webservice
-            JSONArray jsonArray = null;
-            jsonArray = new JSONArray(response.toString());
+            JSONArray jsonArray = (JSONArray) response;
             //se a consulta não veio vazia passar para array list
             if (jsonArray != null) {
                 //objeto java

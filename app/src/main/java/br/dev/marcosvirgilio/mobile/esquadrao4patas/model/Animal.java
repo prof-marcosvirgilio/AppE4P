@@ -6,7 +6,7 @@ import org.json.JSONObject;
 public class Animal {
     //atributos
     private int id;
-    private int codTutor;
+    private String tutor;
     private String nome;
     private int codPorte;
     private int codCorPredominante;
@@ -15,18 +15,17 @@ public class Animal {
     public Animal (JSONObject jp) {
         try {
             //id
-            Integer numero = (int) jp.get("id");
+            Integer numero = (int) jp.get("idanimal");
             this.setId(numero);
             //tutor
-            numero = (int) jp.get("tutor");
-            this.setCodTutor(numero);
+            this.setTutor((String )jp.get("nmtutor"));
             //nome
-            this.setNome((String) jp.get("nome"));
+            this.setNome((String) jp.get("nmanimal"));
             //porte
-            numero = (int) jp.get("porte");
+            numero = (int) jp.get("idporte");
             this.setCodPorte(numero);
             //cor
-            numero = (int) jp.get("cor");
+            numero = (int) jp.get("idcor");
             this.setCodCorPredominante(numero);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -35,20 +34,20 @@ public class Animal {
     //CONSTRUTOR - Inicializa os atributos para gerar Objeto Json
     public Animal () {
         this.setId(0);
-        this.setCodTutor(0);
+        this.setTutor("");
         this.setNome("");
-        this.setCodPorte(2);
+        this.setCodPorte(0);
         this.setCodCorPredominante(0);
     }
     //Metodo retorna o objeto com dados no formato JSON
     public JSONObject toJsonObject() {
         JSONObject json = new JSONObject();
         try {
-            json.put("id", this.id);
-            json.put("tutor", this.codTutor);
-            json.put("nome", this.nome);
-            json.put("porte", this.codPorte);
-            json.put("cor", this.codCorPredominante);
+            json.put("idanimal", this.id);
+            json.put("nmtutor", this.tutor);
+            json.put("nmanimal", this.nome);
+            json.put("idporte", this.codPorte);
+            json.put("idcor", this.codCorPredominante);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -60,13 +59,13 @@ public class Animal {
 
     //métodos
     public int getId() {return this.id;}
-    public int getCodTutor(){ return this.codTutor; }
+    public String getTutor(){ return this.tutor; }
     public int getCodPorte() {return this.codPorte;}
     public int getCodCorPredominante(){return this.codCorPredominante; }
     public String getNome(){return this.nome;}
 
     public void setId(int id){ this.id = id;}
-    public void setCodTutor(int ct){ this.codTutor = ct; }
+    public void setTutor(String ct){ this.tutor = ct; }
     public void setCodCorPredominante(int cc){
         if (cc >= 0 && cc <= 4){  this.codCorPredominante = cc; }
         else { this.codCorPredominante = 0;   }
@@ -78,7 +77,7 @@ public class Animal {
     }
 
     public void setNome(String nm){
-        if (nm.length() < 3){ this.nome = "A definir"; }
-        else { this.nome = nm; }
+
+         this.nome = nm;
     }
 }
