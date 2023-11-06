@@ -84,7 +84,7 @@ public class CadAnimalFragment extends Fragment implements View.OnClickListener
                 //Chamar WebService
                 jsonObjectReq = new JsonObjectRequest(
                         Request.Method.POST,
-                        "https://marcosvir.phost0001.servidorwebfacil.com/e4p/cadanimal.php",
+                        "http://10.0.2.2/e4p/cadanimal.php",
                         animal.toJsonObject(), this, this);
                 requestQueue.add(jsonObjectReq);
                 break;

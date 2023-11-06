@@ -15,17 +15,17 @@ public class Animal {
     public Animal (JSONObject jp) {
         try {
             //id
-            Integer numero = (int) jp.get("idanimal");
+           int numero = jp.getInt ("idanimal");
             this.setId(numero);
             //tutor
-            this.setTutor((String )jp.get("nmtutor"));
+            this.setTutor(jp.getString ("nmtutor"));
             //nome
-            this.setNome((String) jp.get("nmanimal"));
+            this.setNome(jp.getString ("nmanimal"));
             //porte
-            numero = (int) jp.get("idporte");
+            numero = jp.getInt("idporte");
             this.setCodPorte(numero);
             //cor
-            numero = (int) jp.get("idcor");
+            numero = (int) jp.getInt ("idcor");
             this.setCodCorPredominante(numero);
         } catch (JSONException e) {
             e.printStackTrace();

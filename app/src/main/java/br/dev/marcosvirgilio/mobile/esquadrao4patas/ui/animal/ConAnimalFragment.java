@@ -93,8 +93,8 @@ public class ConAnimalFragment extends Fragment
         //incluindo objeto no array de envio
         jsonArray.put(animal.toJsonObject());
         //requisição para o Rest Server
-        jsonArrayReq = new JsonArrayRequest(Request.Method.GET,
-                "https://marcosvir.phost0001.servidorwebfacil.com/e4p/conanimal.php",
+        jsonArrayReq = new JsonArrayRequest(Request.Method.POST,
+                "http://10.0.2.2/e4p/conanimal.php",
                 jsonArray, this, this);
         //mando executar a requisção na fila do sistema
         requestQueue.add(jsonArrayReq);
