@@ -12,7 +12,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_marginLeft="40px"
+            android:orientation="vertical">
 
             <CheckBox
                 android:id="@+id/cbTemTutor"
@@ -56,7 +57,7 @@
                 android:id="@+id/spPorte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/porte_animal"/>
+                android:entries="@array/porte_animal" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -68,13 +69,14 @@
                 android:id="@+id/spCorPredominante"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/cor_predominante"/>
+                android:entries="@array/cor_predominante" />
 
             <Button
                 android:id="@+id/btSalvar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_salvar" />
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize" />
