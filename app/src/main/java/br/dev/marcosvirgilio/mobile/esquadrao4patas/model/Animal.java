@@ -6,6 +6,9 @@ import org.json.JSONObject;
 public class Animal {
     //atributos
     private int id;
+    private String chip;
+    private int anoNascimento;
+    private String sexo;
     private String tutor;
     private String nome;
     private int codPorte;
@@ -15,18 +18,21 @@ public class Animal {
     public Animal (JSONObject jp) {
         try {
             //id
-           int numero = jp.getInt ("idanimal");
-            this.setId(numero);
+            this.setId(jp.getInt ("idanimal"));
+
+            this.setChip(jp.getString ("chip"));
+
+            this.setAnoNascimento(jp.getInt ("anonascimento"));
+
+            this.setSexo(jp.getString ("sexo"));
             //tutor
             this.setTutor(jp.getString ("nmtutor"));
             //nome
             this.setNome(jp.getString ("nmanimal"));
             //porte
-            numero = jp.getInt("idporte");
-            this.setCodPorte(numero);
+            this.setCodPorte(jp.getInt("idporte"));
             //cor
-            numero = (int) jp.getInt ("idcor");
-            this.setCodCorPredominante(numero);
+            this.setCodCorPredominante(jp.getInt ("idcor"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -34,6 +40,9 @@ public class Animal {
     //CONSTRUTOR - Inicializa os atributos para gerar Objeto Json
     public Animal () {
         this.setId(0);
+        this.setChip("");
+        this.setAnoNascimento(0);
+        this.setSexo("");
         this.setTutor("");
         this.setNome("");
         this.setCodPorte(0);
@@ -44,6 +53,9 @@ public class Animal {
         JSONObject json = new JSONObject();
         try {
             json.put("idanimal", this.id);
+            json.put("chip", this.chip);
+            json.put("anonascimento", this.anoNascimento);
+            json.put("sexo", this.sexo);
             json.put("nmtutor", this.tutor);
             json.put("nmanimal", this.nome);
             json.put("idporte", this.codPorte);
@@ -58,6 +70,31 @@ public class Animal {
 
 
     //métodos
+
+    public String getChip() {
+        return chip;
+    }
+
+    public void setChip(String chip) {
+        this.chip = chip;
+    }
+
+    public int getAnoNascimento() {
+        return anoNascimento;
+    }
+
+    public void setAnoNascimento(int anoNascimento) {
+        this.anoNascimento = anoNascimento;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
     public int getId() {return this.id;}
     public String getTutor(){ return this.tutor; }
     public int getCodPorte() {return this.codPorte;}

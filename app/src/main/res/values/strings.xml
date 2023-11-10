@@ -8,6 +8,8 @@
     <string name="titulo_salvar">Salvar</string>
     <string name="title_cad_animal">Cad. Animal</string>
     <string name="title_con_animal">Con. Animal</string>
+    <string name="sexo">Sexo</string>
+    <string name="chip">Código do Chip</string>
 
     <string-array name="porte_animal">
         <item>PP</item>
@@ -17,9 +19,9 @@
         <item>GG</item>
     </string-array>
 
-    <string-array name="tutores">
-        <item>Vinicius de Moraes</item>
-        <item>Cruz de Souza</item>
+    <string-array name="sexo">
+        <item>M</item>
+        <item>F</item>
     </string-array>
 
     <string-array name="cor_predominante">
